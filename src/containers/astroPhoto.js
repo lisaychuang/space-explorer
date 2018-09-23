@@ -10,6 +10,8 @@ class AstronomyPhoto extends Component {
     return (
       <div>
         <h1>Astronomy photo of the day</h1>
+        <h2>{this.props.photo.title}</h2>
+        <img src={this.props.photo.url} alt={this.props.photo.title}/>
       </div>
     );
   }

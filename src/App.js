@@ -7,6 +7,7 @@ import {
   Link
 } from 'react-router-dom';
 import AstroPhoto from './containers/AstroPhoto';
+import NavBar from './components/NavBar';
 import logo from './logo.svg';
 import './App.css';
 
@@ -31,12 +32,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <AstroPhoto />
-        </div>
+          <NavBar className="App-header"/>
+          <Route exact path="/" render={() => <h1>Welcome to Space Explorer</h1>} />
+          <Route path='/photo' render={routerProps => <AstroPhoto {...routerProps} photo={this.state.astroPhoto}/>} />  
+         </div>
       </Router>
       
     );
